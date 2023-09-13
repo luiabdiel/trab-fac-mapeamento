@@ -33,7 +33,7 @@ const TagInput = styled.input`
   margin-top: 12px;
 `;
 
-const API_KEY = process.env.NEXT_PUBLIC_API_URL as string;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY as string;
 
 const position = {
   lat: -9.411795767433379,
