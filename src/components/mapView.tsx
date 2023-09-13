@@ -1,49 +1,93 @@
 "use client";
 
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  LoadScript,
+  Marker,
+  StandaloneSearchBox,
+} from "@react-google-maps/api";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
   height: 100vh;
 `;
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+const TagInput = styled.input`
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0 12px;
+
+  width: 240px;
+  height: 32px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  outline: none;
+
+  font-size: 14px;
+  text-overflow: ellipsis;
+
+  position: absolute;
+  left: 50%;
+  margin-left: -120px;
+  margin-top: 12px;
+`;
+
+const API_KEY = process.env.NEXT_PUBLIC_API_URL as string;
+
 const position = {
   lat: -9.411795767433379,
   lng: -40.503899748402446,
 };
-const positionTrashBin = {
-  lat: -9.410568680158166,
-  lng: -40.50491028600273,
-};
 
 export function MapView() {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: API_URL,
-  });
+  const [map, setMap] = useState<google.maps.Map>();
+  const [searchBox, setSearchBox] = useState<google.maps.places.SearchBox>();
+  const [markers, setMarkers] = useState<any[]>([]);
+
+  const onMapLoad = (map: google.maps.Map) => {
+    setMap(map);
+  };
+
+  const onLoad = (ref: google.maps.places.SearchBox) => {
+    setSearchBox(ref);
+  };
+
+  const onPlacesChanged = () => {
+    const places = searchBox!.getPlaces();
+
+    const place = places![0];
+
+    const location = {
+      lat: place.geometry?.location?.lat() || 0,
+      lng: place.geometry?.location?.lng() || 0,
+    };
+
+    setMarkers([...markers, location]);
+
+    map?.panTo(location);
+  };
 
   return (
     <Container>
-      {isLoaded ? (
+      <LoadScript googleMapsApiKey={API_KEY} libraries={["places"]}>
         <GoogleMap
+          onLoad={onMapLoad}
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={position}
           zoom={15}
         >
-          <Marker
-            position={positionTrashBin}
-            options={{
-              label: {
-                text: "test",
-                className: "marker-pointer",
-              },
-            }}
-          ></Marker>
+          <StandaloneSearchBox
+            onLoad={onLoad}
+            onPlacesChanged={onPlacesChanged}
+          >
+            <TagInput placeholder="Digite um endereço" />
+          </StandaloneSearchBox>
+          {markers?.map((marker, index) => (
+            <Marker key={index} position={marker} />
+          ))}
         </GoogleMap>
-      ) : (
-        <></>
-      )}
+      </LoadScript>
     </Container>
   );
 }
