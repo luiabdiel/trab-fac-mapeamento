@@ -1,9 +1,9 @@
-import styles from "./page.module.css";
+import { MapView } from "@/components/mapView";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <span>hi, next</span>
+    <main>
+      <MapView />
     </main>
   );
 }
