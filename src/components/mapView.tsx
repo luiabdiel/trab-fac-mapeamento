@@ -43,7 +43,7 @@ const position = {
 export function MapView() {
   const [map, setMap] = useState<google.maps.Map>();
   const [searchBox, setSearchBox] = useState<google.maps.places.SearchBox>();
-  const [markers, setMarkers] = useState<any[]>([]);
+  const [marker, setMarker] = useState<google.maps.LatLng | null>(null);
 
   const onMapLoad = (map: google.maps.Map) => {
     setMap(map);
@@ -63,7 +63,7 @@ export function MapView() {
       lng: place.geometry?.location?.lng() || 0,
     };
 
-    setMarkers([...markers, location]);
+    setMarker(new google.maps.LatLng(location.lat, location.lng));
 
     map?.panTo(location);
   };
@@ -83,9 +83,7 @@ export function MapView() {
           >
             <TagInput placeholder="Digite um endereço" />
           </StandaloneSearchBox>
-          {markers?.map((marker, index) => (
-            <Marker key={index} position={marker} />
-          ))}
+          {marker && <Marker position={marker} />}
         </GoogleMap>
       </LoadScript>
     </Container>
