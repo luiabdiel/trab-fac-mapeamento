@@ -2,6 +2,10 @@
 
 Este é um projeto desenvolvido como parte do curso da faculdade. O objetivo principal deste projeto é criar uma plataforma de mapeamento de lixeiras que visa sensibilizar a população sobre a importância da destinação correta de resíduos sólidos. Além disso, busca facilitar o acesso à informação sobre a localização das lixeiras, promovendo a inclusão digital e incentivando a participação ativa dos cidadãos na promoção de cidades mais sustentáveis.
 
+### Deploy
+
+- https://trab-fac-mapeamento.vercel.app/
+
 ### Tecnologia Utilizada
 
 Este projeto está sendo desenvolvido utilizando a tecnologia Next.js. Next.js é um framework React que facilita a criação de aplicativos web modernos e eficientes. A escolha do Next.js se deve à sua capacidade de oferecer um desempenho excepcional e uma experiência de desenvolvimento mais ágil.
