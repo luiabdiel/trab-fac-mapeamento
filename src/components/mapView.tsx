@@ -105,6 +105,16 @@ export function MapView() {
           mapContainerStyle={{ width: "100%", height: "100%" }}
           center={centerPosition}
           zoom={15}
+          options={{
+            zoomControl: false,
+            styles: [
+              {
+                elementType: "labels",
+                featureType: "poi.business",
+                stylers: [{ visibility: "off" }],
+              },
+            ],
+          }}
         >
           <StandaloneSearchBox
             onLoad={onLoad}
