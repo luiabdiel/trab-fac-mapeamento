@@ -48,10 +48,12 @@ export function MapView() {
   const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(
     null
   );
+  const [markersLoaded, setMarkersLoaded] = useState(false);
 
   const onMapLoad = (map: google.maps.Map) => {
     setMap(map);
     setInfoWindow(new google.maps.InfoWindow());
+    setMarkersLoaded(true);
   };
 
   const onLoad = (ref: google.maps.places.SearchBox) => {
@@ -110,17 +112,18 @@ export function MapView() {
           >
             <TagInput placeholder="Digite um endereço" />
           </StandaloneSearchBox>
-          {positions.map((position, index) => (
-            <Marker
-              key={index}
-              position={{ lat: position.Latitude, lng: position.Longitude }}
-              onClick={(e) => handleMarkerClick(e.latLng)}
-              icon={{
-                url: customMarkerIcon.src,
-                scaledSize: { width: 35, height: 35, f: "px", b: "px" },
-              }}
-            />
-          ))}
+          {markersLoaded &&
+            positions.map((position, index) => (
+              <Marker
+                key={index}
+                position={{ lat: position.Latitude, lng: position.Longitude }}
+                onClick={(e) => handleMarkerClick(e.latLng)}
+                icon={{
+                  url: customMarkerIcon.src,
+                  scaledSize: new window.google.maps.Size(35, 35),
+                }}
+              />
+            ))}
         </GoogleMap>
       </LoadScript>
     </Container>
