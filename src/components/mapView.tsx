@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import styled from "styled-components";
 import positions from "../positions.json";
+import customMarkerIcon from "../assets/images/recycle.png";
 
 const Container = styled.div`
   height: 100vh;
@@ -114,6 +115,10 @@ export function MapView() {
               key={index}
               position={{ lat: position.Latitude, lng: position.Longitude }}
               onClick={(e) => handleMarkerClick(e.latLng)}
+              icon={{
+                url: customMarkerIcon.src,
+                scaledSize: { width: 35, height: 35, f: "px", b: "px" },
+              }}
             />
           ))}
         </GoogleMap>
