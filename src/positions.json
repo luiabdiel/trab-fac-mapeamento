@@ -1,0 +1,20 @@
+[
+  {
+    "Latitude": -9.405819,
+    "Longitude": -9.405819,
+    "name": "Lixo 1",
+    "description": "description 1"
+  },
+  {
+    "Latitude": -9.4119261,
+    "Longitude": -40.5030977,
+    "name": "Lixo 2",
+    "description": "description 2"
+  },
+  {
+    "Latitude": -9.4109892,
+    "Longitude": -40.5038419,
+    "name": "Lixo 3",
+    "description": "description 3"
+  }
+]

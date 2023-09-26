@@ -8,6 +8,7 @@ import {
 } from "@react-google-maps/api";
 import { useState } from "react";
 import styled from "styled-components";
+import positions from "../positions.json";
 
 const Container = styled.div`
   height: 100vh;
@@ -35,7 +36,7 @@ const TagInput = styled.input`
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY as string;
 
-const position = {
+const centerPosition = {
   lat: -9.411795767433379,
   lng: -40.503899748402446,
 };
@@ -43,10 +44,13 @@ const position = {
 export function MapView() {
   const [map, setMap] = useState<google.maps.Map>();
   const [searchBox, setSearchBox] = useState<google.maps.places.SearchBox>();
-  const [marker, setMarker] = useState<google.maps.LatLng | null>(null);
+  const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(
+    null
+  );
 
   const onMapLoad = (map: google.maps.Map) => {
     setMap(map);
+    setInfoWindow(new google.maps.InfoWindow());
   };
 
   const onLoad = (ref: google.maps.places.SearchBox) => {
@@ -63,9 +67,31 @@ export function MapView() {
       lng: place.geometry?.location?.lng() || 0,
     };
 
-    setMarker(new google.maps.LatLng(location.lat, location.lng));
-
     map?.panTo(location);
+  };
+
+  const handleMarkerClick = (markerPosition: google.maps.LatLng | null) => {
+    if (map && infoWindow && markerPosition) {
+      const matchingPosition = positions.find((position) => {
+        return (
+          position.Latitude === markerPosition.lat() &&
+          position.Longitude === markerPosition.lng()
+        );
+      });
+
+      if (matchingPosition) {
+        const contentString = `
+          <div>
+            <h3>${matchingPosition.name}</h3>
+            <p>${matchingPosition.description}</p>
+          </div>
+        `;
+
+        infoWindow.setContent(contentString);
+        infoWindow.setPosition(markerPosition);
+        infoWindow.open(map);
+      }
+    }
   };
 
   return (
@@ -74,7 +100,7 @@ export function MapView() {
         <GoogleMap
           onLoad={onMapLoad}
           mapContainerStyle={{ width: "100%", height: "100%" }}
-          center={position}
+          center={centerPosition}
           zoom={15}
         >
           <StandaloneSearchBox
@@ -83,7 +109,13 @@ export function MapView() {
           >
             <TagInput placeholder="Digite um endereço" />
           </StandaloneSearchBox>
-          {marker && <Marker position={marker} />}
+          {positions.map((position, index) => (
+            <Marker
+              key={index}
+              position={{ lat: position.Latitude, lng: position.Longitude }}
+              onClick={(e) => handleMarkerClick(e.latLng)}
+            />
+          ))}
         </GoogleMap>
       </LoadScript>
     </Container>
