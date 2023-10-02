@@ -1,9 +1,9 @@
-import { MapView } from "@/components/mapView";
+import { Main } from "@/components/main";
 
 export default function Home() {
   return (
     <main>
-      <MapView />
+      <Main />
     </main>
   );
 }

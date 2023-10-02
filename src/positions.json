@@ -4,41 +4,144 @@
     "Longitude": -9.405819,
     "name": "Lixo 1",
     "description": "description 1"
+   },
+   {
+    "Latitude": -9.409829,
+    "Longitude":-40.505007,
+    "name": "Lixo centro 2",
+    "description": "lixeira de ferro, Rua Aprígio Duarte"
+   }, 
+   {
+    "Latitude": -9.410085,
+    "Longitude":-40.503663,
+    "name": "Lixo centro 3",
+    "description": "lixeira de ferro, Rua Aprígio Duarte"
+   }, 
+   {
+    "Latitude":-9.410265,
+    "Longitude":-40.503159,
+    "name": "Lixo centro 4",
+    "description": "lixeira ecológica, Rua Rui Barbosa" 
+   },
+   {
+    "Latitude":-9.410319,
+    "Longitude":-40.502859,
+    "name": "Lixo centro 5",
+    "description": "lixeira de ferro, Rua Rui Barbosa" 
+   },
+   { 
+    "Latitude":-9.410454,
+    "Longitude":-40.502329,
+    "name": "Lixo centro 6",
+    "description": "lixeira de ferro, Rua Rui Barbosa" 
+   },
+   {
+    "Latitude":-9.410677,
+    "Longitude":-40.501646,
+    "name": "Lixo centro 7",
+    "description": "Lixeira de ferro, Avenida Carmela Dutra Alves"
+   }, 
+   {   
+    "Latitude":-9.410859,
+    "Longitude":-40.501083,
+    "name": "Lixo centro 8",
+    "description": "Lixeira de ferro, Avenida Carmela Dutra Alves"
+   },
+   {
+    "Latitude":-9.411168,
+    "Longitude":-40.500174,
+    "name": "Lixo centro 9",
+    "description": "Lixeira de ferro, Avenida Carmela Dutra Alves "
+   },
+   {   
+    "Latitude":-9.410859,
+    "Longitude":-40.501083,
+    "name": "Lixo centro 8",
+    "description": "Lixeira de ferro, Avenida Carmela Dutra Alves"
+   },
+   
+   {
+    "Latitude":-9.411431,
+    "Longitude":-40.499425,
+    "name": "Lixo centro 9",
+    "description": "Lixeira de ferro, Avenida Carmela Dutra Alves"
+   },
+   {
+    "Latitude":-9.411588,
+    "Longitude":-40.498945,
+    "name": "Lixo centro 10",
+    "description": "Lixeira de ferro, Avenida Carmela Dutra Alves"
+   },
+   {
+    "Latitude":-9.409469,
+    "Longitude":-40.505765,
+    "name": "Lixo centro 11",
+    "description": "Lixeira de ferro, Rua Aprígio Duarte"
+   },
+   {
+    "Latitude":-9.409154,
+    "Longitude":-40.507308,
+    "name": "Lixo centro 12",
+    "description": "Lixeira de ferro, Rua Aprígio Duarte"
+   },
+   {
+    "Latitude":-9.409460,
+    "Longitude":-40.510929,
+    "name": "Lixo centro 13",
+    "description": "Lixeira de ferro, Rua Antonio Alves de Souza"
+   },
+   {
+    "Latitude":-9.410361,
+    "Longitude":-40.510650,
+    "name": "Lixo centro 14",
+    "description": "Lixeira de ferro, Rua José Petitinga"
+   }, 
+   {
+    "Latitude":-9.409460,
+    "Longitude":-40.510929,
+    "name": "Lixo centro 15",
+    "description": "Lixeira de ferro, Rua Antonio Alves de Souza"
   },
   {
-    "Latitude": -9.4119261,
-    "Longitude": -40.5030977,
-    "name": "Lixo 2",
-    "description": "description 2"
-  },
-  {
-    "Latitude": -9.4109892,
-    "Longitude": -40.5038419,
-    "name": "Lixo 3",
-    "description": "description 3"
-  },
-  {
-    "Latitude": -9.409055,
-    "Longitude": -40.508008,
-    "name": "Lixo 3",
-    "description": "description 3"
-  },
-  {
-    "Latitude": -9.410400084932188,
-    "Longitude": -40.50233211805834,
-    "name": "Lixo 3",
-    "description": "description 3"
-  },
-  {
-    "Latitude": -9.411084839795476,
-    "Longitude": -40.501047603618524,
-    "name": "Lixo 3",
-    "description": "description 3"
-  },
-  {
-    "Latitude": -9.411042502066623,
-    "Longitude": -40.501036874783374,
-    "name": "Lixo 3",
-    "description": "description 3"
-  }
+    "Latitude":-9.410419,
+    "Longitude":-40.508745,
+    "name": "Lixo centro 16",
+    "description": "Lixeira de ferro, Rua José Petitinga"
+   },
+   {
+    "Latitude":-9.410094,
+    "Longitude":-40.505774,
+    "name": "Lixo centro 17",
+    "description": "Lixeira de ferro, Avenida Raul Alves"
+   }, 
+   {
+    "Latitude":-9.410567,
+    "Longitude":-40.504916,
+    "name": "Lixo centro 18",
+    "description": "grupo de lixeira ecológica de ferro, Travessa Doutor Édson Ribeiro"
+   }, 
+   {
+    "Latitude":-9.410498,
+    "Longitude":-40.505116,
+    "name": "Lixo centro 19",
+    "description": "Lixo de ferro, Rua Célia de Jesus"
+   },
+   {
+    "Latitude":-9.411033,
+    "Longitude":-40.505239,
+    "name": "Lixo centro 20",
+    "description": "Lixeira de ferro, Praça Antonílio da França Cardoso"
+   },
+   {
+    "Latitude":-9.410950,
+    "Longitude":-40.505318,
+    "name": "Lixo centro 21",
+    "description": "Lixeira de ferro, Rua Célia de Jesus"
+   },
+   {    
+    "Latitude":-9.411097,
+    "Longitude":-40.504996,
+    "name": "Lixo centro 22",
+    "description": "Lixeira de ferro, Rua Célia de Jesus"
+   }
 ]
