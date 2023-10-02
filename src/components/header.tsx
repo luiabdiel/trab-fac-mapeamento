@@ -9,7 +9,11 @@ const TagHeader = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 100px;
+  padding: 12px 24px;
+
+  @media (min-width: 968px) {
+    padding: 24px 160px;
+  }
 `;
 
 const Logo = styled.a`
